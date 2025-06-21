@@ -128,6 +128,8 @@ echo "----> [ASTRO-INSTALL] Node.js version: $node_version"
 # - yarn: package manager
 echo "----> [ASTRO-INSTALL] Installing global dependencies..."
 npm install -g pm2 bytenode yarn
+echo "----> [ASTRO-INSTALL] Installing pm2-logrotate..."
+pm2 install pm2-logrotate
 
 # 3. Download and extract latest version
 # Using GitHub API to get the latest release download link
