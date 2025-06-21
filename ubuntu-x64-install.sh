@@ -115,7 +115,7 @@ check_and_install_tools
 # Using NodeSource repository to install the latest Node.js 23.x version
 echo "----> [ASTRO-INSTALL] Installing Node.js 23.x..."
 curl -sL https://deb.nodesource.com/setup_23.x | bash -
-apt-get install -y nodejs
+sudo apt-get install --allow-downgrades -y nodejs=23.11.1-1nodesource1
 
 # Verify Node.js installation
 node_version=$(node -v)
