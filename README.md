@@ -1,7 +1,7 @@
 # Astro 套利系统 - 安装教程
 
 ### 1. 云服务器要求
-切记不可以使用中国境内服务器，推荐阿里云或AWS日本地区 \
+切记不可以使用中国境内服务器，推荐阿里云，亚马逊云香港，日本地区 \
 **境外网络完全可以本地部署，交易所KEY需要绑定IP，请注意IP变化** 
 
 操作系统: ```Ubuntu 24.x版本``` \
@@ -36,9 +36,9 @@ curl -L https://raw.githubusercontent.com/astro-btc/astro/refs/heads/main/ubuntu
 |--------------------------|-----------------------------------------------------------------|
 | `PORT`                   | 端口号，需要防火墙放行此端口                                      |
 | `ALLOWED_DOMAIN`         | 云服务公网IP地址，也可以填域名（填写域名需替换证书）                                      |
-| `ADMIN_PREFIX`           | 管理后台访问的 URL 前缀，可自行更改                             |
-| `ADMIN_SECURITY_CODE`    | 登录密码                                                        |
-| `ADMIN_2FA_SECRET`       | 二次认证密钥，请导入 Google Authentication 使用，可自行修改     |
+| `ADMIN_PREFIX`           | 管理后台访问的 URL 前缀 （请自行更改）                             |
+| `ADMIN_SECURITY_CODE`    | 登录密码  （请自行更改）                                                      |
+| `ADMIN_2FA_SECRET`       | 二次认证密钥，请导入 Google Authentication 使用 （请自行更改）    |
 
 
 此配置文件修改过后，请执行 ```sudo pm2 restart astro-server``` 重启生效 
