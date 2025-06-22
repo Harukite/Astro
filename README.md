@@ -1,75 +1,71 @@
-# Astro 套利系统 - 安装教程
+[Astro介绍](./README.md)
+[Astro安装教程](./INSTALL.md)
+[Astro安全相关-必读](./SECURITY.md)
 
-### 1. 云服务器要求
-切记不可以使用中国境内服务器，推荐阿里云，亚马逊云香港，日本地区 \
-**境外网络完全可以本地部署，交易所KEY需要绑定IP，请注意IP变化** 
+# Astro - 产品介绍
 
-操作系统: ```Ubuntu 24.x版本``` \
-系统架构：```x86-64``` \
-内存：```最少1GB``` \
-运行```hostnamectl```命令,返回以下结果
+Astro 是一款基于多空对冲策略的**中心化交易所（CEX）套利工具**，支持：
+- ✅ 现货-期货（永续合约）对冲
+- ✅ 期货-期货对冲（跨交易所）
 
-```
-Static hostname: *
-       Icon name: computer-vm
-         Chassis: vm 🖴
-      Machine ID: *
-         Boot ID: *
-  Virtualization: kvm
-Operating System: Ubuntu 24.04.1 LTS        // * 这项是必须的, 24.x版本
-          Kernel: Linux 6.8.0-40-generic
-    Architecture: x86-64                    // * 这项是必须的
- Hardware Vendor: Alibaba Cloud
-  Hardware Model: Alibaba Cloud ECS
-Firmware Version: 0.0.0
-   Firmware Date: Fri 2015-02-06
-    Firmware Age: 10y 2month 1w 5d 
-```
+### 已支持交易所清单
+| 交易所   | 现货 | 期货（永续） |
+|----------|------|--------------|
+| Bybit    | ✅   | ✅           |
+| Bitget   | ✅   | ✅           |
+| Binance  | ✅   | ✅           |
+| Kucoin   | ✅   | ✅           |
+| Gate     | ✅   | ✅           |
+| OKX      | ✅   | ✅           |
+| Aster    | ❌   | ✅           |
 
-### 2. 执行一键安装脚本 (需输入公网IP地址)
-```
-curl -L https://raw.githubusercontent.com/astro-btc/astro/refs/heads/main/ubuntu-x64-install.sh | sudo bash -
-```
-### 3. astro-server/.env 文件字段说明
+---
 
-| **配置项**               | **说明**                                                        |
-|--------------------------|-----------------------------------------------------------------|
-| `PORT`                   | 端口号，需要防火墙放行此端口                                      |
-| `ALLOWED_DOMAIN`         | 云服务公网IP地址，也可以填域名（填写域名需替换证书）                                      |
-| `ADMIN_PREFIX`           | 管理后台访问的 URL 前缀 （请自行更改）                             |
-| `ADMIN_SECURITY_CODE`    | 登录密码  （请自行更改）                                                      |
-| `ADMIN_2FA_SECRET`       | 二次认证密钥，请导入 Google Authentication 使用 （请自行更改）    |
+## 套利原理
+### 现货-期货对冲案例
+假设代币`A`存在价差：
+- Binance **现货价**：0.98 USDT
+- OKX **合约价**：1.00 USDT
 
+**操作流程**：
+1. **开仓**  
+   - Binance现货买入 1000个 `A`（成本 980 USDT）
+   - OKX开空单 1000个 `A`
+   
+2. **清仓-价差回归**（假设两边价格收敛至 0.88 USDT）  
+   - Binance卖现货：880 USDT → **亏损 100 USDT**  
+   - OKX平空单：盈利 (1.00 - 0.88) × 1000 = **120 USDT**  
+   - **净盈利：20 USDT**
 
-此配置文件修改过后，请执行 ```sudo pm2 restart astro-server``` 重启生效 
+> **注**：实际需考虑手续费，资金费率、滑点等变量。期货-期货对冲逻辑相同。
 
-### 4. 如何配置交易所API？
-‼️ 请务必每一个api都添加IP地址白名单 ‼️  \
-‼️ 请务必 **不要** 开通[提现]权限 ‼️ 
+---
 
-#### a. Binance
-合约账户类型必须是 **统一账户**, 权限相关参考下图：\
-![](images/BN-api.png)
+## 开清价差计算
+### 核心公式
+价差百分比 = [2 × (Price_A - Price_B)] / (Price_A + Price_B) × 100%
 
-#### b. Bybit
-权限相关参考下图：\
-![](images/Bybit-API.png)
+### 案例演算
+假设订单簿数据：
+| 交易所  | 卖1价 | 买1价 |
+|---------|-------|-------|
+| Binance | 2256.0 | 2255.9 |
+| OKX     | 2255.8 | 2255.7 |
 
-#### c. Bitget
-请使用联合保证金模式，权限相关参考下图：\
-![](images/BG-API.png)
+**开仓价差计算**（OKX买1价 vs Binance卖1价）：
+开仓差价 = [2 × (2255.7 - 2256.0)] / (2255.7 + 2256.0) × 100% = -0.0133%
 
-#### d. OKX
-请使用跨币种保证金模式，权限相关参考下图：\
-![](images/OKX-API.png)
+**清仓价差计算**（OKX卖1价 vs Binance买1价）：
+清仓差价 = [2 × (2255.8 - 2255.9)] / (2255.8 + 2255.9) × 100% = -0.0044%
 
-#### e. Gate
-请使用统一账户+跨币种保证金模式，权限相关参考下图：\
-![](images/Gate-API.png)
+### 验证规则
+> ✅ **开仓价差**（-0.0133%）必须小于**清仓价差**（-0.0044%）  
+> ❌ 若出现相反情况则表明计算错误
 
-#### f. Kucoin
-权限相关参考下图：\
-![](images/kucoin-API.png)
+---
 
-#### g. Aster
-官网直接配置即可
+## 关键特性
+1. **全自动套利** - 实时监控多交易所价差
+2. **风险对冲** - 多空双向持仓规避单边风险
+3. **跨平台支持** - 覆盖主流交易所现货/合约市场
+4. **智能算法** - 自动计算最优开平仓点位
