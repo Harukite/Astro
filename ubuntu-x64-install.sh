@@ -179,7 +179,7 @@ rm bs3-ubuntu-x64.gz
 
 # Return to astro-core directory
 cd ..
-
+pm2 start pm2.config.js
 echo "----> [ASTRO-INSTALL] astro-core setup completed"
 
 # 5. Configure astro-server
