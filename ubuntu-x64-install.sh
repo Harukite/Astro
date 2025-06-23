@@ -10,6 +10,43 @@
 # Exit on error to ensure script stops if any command fails
 set -e
 
+# 设置英文环境确保命令输出一致
+export LANG=C
+
+# 系统要求检测函数
+check_system() {
+    echo "正在获取系统信息..."
+    local host_output
+    host_output=$(hostnamectl 2>&1)
+    
+    # 打印完整系统信息
+    echo -e "\n\033[36m=== 系统信息检测结果 ===\033[0m"
+    echo "$host_output"
+    echo -e "\033[36m========================\033[0m\n"
+    
+    # 检测操作系统
+    if ! grep -qP "Operating System:\s+Ubuntu 24(\.\d+)+ LTS" <<< "$host_output"; then
+        echo -e "\033[31m✗ 错误：必须使用 Ubuntu 24.x 系统\033[0m"
+        return 1
+    fi
+    
+    # 检测系统架构
+    if ! grep -q "Architecture: x86-64" <<< "$host_output"; then
+        echo -e "\033[31m✗ 错误：必须使用 x86-64 架构\033[0m"
+        return 1
+    fi
+    
+    echo -e "\033[32m✓ 系统检测通过：Ubuntu 24.x / x86-64\033[0m"
+    return 0
+}
+
+# 执行系统检测
+echo -e "\n开始系统环境验证..."
+if ! check_system; then
+    echo -e "\n\033[41m系统环境不满足要求，脚本终止执行\033[0m"
+    exit 1
+fi
+
 # Function to check and install required tools
 check_and_install_tools() {
     echo "----> [ASTRO-INSTALL] Checking required tools..."
