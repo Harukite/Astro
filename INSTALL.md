@@ -1,4 +1,4 @@
-#### [Astro介绍](./README.md) 
+#### [Astro产品介绍](./README.md) 
 #### [Astro安装教程](./INSTALL.md) 
 #### [Astro安全相关-必读](./SECURITY.md) 
 
@@ -65,6 +65,7 @@ curl -L https://raw.githubusercontent.com/astro-btc/astro/refs/heads/main/ubuntu
 
 #### a. Binance
 合约账户类型必须是 **统一账户**, 权限相关参考下图：\
+（请先调整为统一账户，然后再创建API）
 ![](images/BN-api.png)
 
 #### b. Bybit
@@ -80,7 +81,8 @@ curl -L https://raw.githubusercontent.com/astro-btc/astro/refs/heads/main/ubuntu
 ![](images/OKX-API.png)
 
 #### e. Gate
-请使用统一账户+跨币种保证金模式，权限相关参考下图：\
+ ==> 请开启双向持仓(交易设置->交易配置->持仓模式选择双向持仓)  \
+ ==> 请使用 **统一账户 + 跨币种保证金模式**，权限相关参考下图：\
 ![](images/Gate-API.png)
 
 #### f. Kucoin
