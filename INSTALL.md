@@ -69,6 +69,7 @@ curl -L https://raw.githubusercontent.com/astro-btc/astro/refs/heads/main/ubuntu
 ![](images/BN-api.png)
 
 #### b. Bybit
+保证金模式设置为： **全仓保证金** \
 权限相关参考下图：\
 ![](images/Bybit-API.png)
 
