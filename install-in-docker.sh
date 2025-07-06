@@ -2,6 +2,7 @@
 
 # This script is for installing Astro in docker
 # apt-get update && apt-get install -y curl
+# /home/ubuntu
 # curl -L https://raw.githubusercontent.com/astro-btc/astro/refs/heads/main/install-in-docker.sh | bash -
 
 # Exit on error to ensure script stops if any command fails
@@ -138,6 +139,7 @@ pm2 start pm2.config.js
 echo "----> [ASTRO-INSTALL] Setting up PM2 startup..."
 # pm2 startup
 pm2 save
+rm -rf ../__MACOSX
 
 echo "----> [ASTRO-INSTALL] Installation completed!"
 echo "----> [ASTRO-INSTALL] 打开浏览器访问: https://$SERVER_IP:12345/change-after-install/"
