@@ -497,13 +497,13 @@ EOF
     # 显示安装完成信息
     echo -e "\n${GREEN}╔════════════════════════════════════════════════════════════════════════════════╗${NC}"
     echo -e "${GREEN}║                                                                                ║${NC}"
-    echo -e "${GREEN}║                         🎉 安装完成！🎉                                       ║${NC}"
+    echo -e "${GREEN}║                         🎉 安装完成！🎉                                         ║${NC}"
     echo -e "${GREEN}║                                                                                ║${NC}"
     echo -e "${GREEN}╚════════════════════════════════════════════════════════════════════════════════╝${NC}\n"
     
     echo -e "${BLUE}📋 安装信息:${NC}"
     echo -e "   🌐 访问地址: ${GREEN}https://$SERVER_IP:$PORT/$ADMIN_PREFIX${NC}"
-    echo -e "   🔑 安全码: ${YELLOW}$ADMIN_SECURITY_CODE${NC}"
+    echo -e "   🔑 密  码: ${YELLOW}$ADMIN_SECURITY_CODE${NC}"
     echo -e "   📱 2FA密钥: ${YELLOW}$ADMIN_2FA_SECRET${NC}"
     echo -e "   📁 配置文件: ${GREEN}$(pwd)/astro-server/.env${NC}"
     echo ""
