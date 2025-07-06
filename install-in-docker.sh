@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # This script is for installing Astro in docker
+# apt-get update && apt-get install curl
+# curl -L https://raw.githubusercontent.com/astro-btc/astro/refs/heads/main/install-in-docker.sh | bash -
 
 # Exit on error to ensure script stops if any command fails
 set -e
