@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This script is for installing Astro in docker
-# apt-get update && apt-get install curl
+# apt-get update && apt-get install -y curl
 # curl -L https://raw.githubusercontent.com/astro-btc/astro/refs/heads/main/install-in-docker.sh | bash -
 
 # Exit on error to ensure script stops if any command fails
@@ -118,7 +118,7 @@ echo "----> [ASTRO-INSTALL] astro-core setup completed"
 echo "----> [ASTRO-INSTALL] Configuring astro-server..."
 cd ../astro-server || exit 1
 
-SERVER_IP = "127.0.0.1"
+SERVER_IP="127.0.0.1"
 
 # Update .env file with the IP address
 if [ -f .env ]; then
