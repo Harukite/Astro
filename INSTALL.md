@@ -20,32 +20,21 @@ https://t.me/astro_realtime_news
 切记不可以使用中国境内服务器，推荐阿里云，亚马逊云香港，日本地区 \
 **境外网络完全可以本地部署，交易所KEY需要绑定IP，请注意IP变化** 
 
-操作系统: ```Ubuntu 24.x版本``` \
+操作系统: ```Linux版本``` \
 系统架构：```x86-64``` \
-内存：```最少1GB``` \
-运行```hostnamectl```命令,返回以下结果
-
-```
-Static hostname: *
-       Icon name: computer-vm
-         Chassis: vm 🖴
-      Machine ID: *
-         Boot ID: *
-  Virtualization: kvm
-Operating System: Ubuntu 24.04.1 LTS        // * 这项是必须的, 24.x版本
-          Kernel: Linux 6.8.0-40-generic
-    Architecture: x86-64                    // * 这项是必须的
- Hardware Vendor: Alibaba Cloud
-  Hardware Model: Alibaba Cloud ECS
-Firmware Version: 0.0.0
-   Firmware Date: Fri 2015-02-06
-    Firmware Age: 10y 2month 1w 5d 
-```
+内存：```最少2GB``` \
 
 ### 2. 执行一键安装脚本 (需输入公网IP地址)
+原始安装方法（不推荐）
 ```
 curl -L https://raw.githubusercontent.com/astro-btc/astro/refs/heads/main/ubuntu-x64-install.sh | sudo bash -
 ```
+
+Docker安装方法，更稳定（推荐）
+```
+curl -L https://raw.githubusercontent.com/astro-btc/Astro/refs/heads/main/install-with-docker.sh | sudo bash -
+```
+
 ### 3. astro-server/.env 文件字段说明
 
 | **配置项**               | **说明**                                                        |
@@ -57,7 +46,7 @@ curl -L https://raw.githubusercontent.com/astro-btc/astro/refs/heads/main/ubuntu
 | `ADMIN_2FA_SECRET`       | 二次认证密钥，请导入 Google Authentication 使用 （请自行更改）    |
 
 
-此配置文件修改过后，请执行 ```sudo pm2 restart astro-server``` 重启生效 
+此配置文件修改过后，请重启系统生效 
 
 ### 4. 如何配置交易所API？
 ‼️ 请务必每一个api都添加IP地址白名单 ‼️  \
