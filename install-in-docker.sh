@@ -2,7 +2,7 @@
 
 # This script is for installing Astro in docker
 # apt-get update && apt-get install -y curl
-# /home/ubuntu
+# cd /home/ubuntu
 # curl -L https://raw.githubusercontent.com/astro-btc/astro/refs/heads/main/install-in-docker.sh | bash -
 
 # Exit on error to ensure script stops if any command fails
@@ -27,7 +27,6 @@ check_and_install_tools() {
     # Install missing tools if any
     if [ ${#missing_tools[@]} -ne 0 ]; then
         echo "----> [ASTRO-INSTALL] Installing missing tools: ${missing_tools[*]}"
-        apt-get update
         apt-get install -y "${missing_tools[@]}"
     fi
 }
