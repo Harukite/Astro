@@ -379,7 +379,7 @@ main() {
     # 生成随机配置
     log_info "生成安全配置..."
     
-    ADMIN_PREFIX=$(generate_random_string 8)
+    ADMIN_PREFIX=$(generate_random_string 6)
     ADMIN_2FA_SECRET=$(generate_2fa_secret)
     ADMIN_JWT_SECRET=$(generate_random_string 32)
     
