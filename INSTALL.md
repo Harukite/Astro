@@ -25,12 +25,6 @@ https://t.me/astro_realtime_news
 内存：```最少2GB``` \
 
 ### 2. 执行一键安装脚本 (需输入公网IP地址)
-原始安装方法（不推荐）
-```
-curl -L https://raw.githubusercontent.com/astro-btc/astro/refs/heads/main/ubuntu-x64-install.sh | sudo bash -
-```
-
-Docker安装方法，更稳定（推荐）
 ```
 curl -L https://raw.githubusercontent.com/astro-btc/Astro/refs/heads/main/install-with-docker.sh | sudo bash -
 ```
