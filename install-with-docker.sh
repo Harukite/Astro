@@ -400,17 +400,6 @@ ADMIN_2FA_SECRET=$ADMIN_2FA_SECRET
 ADMIN_JWT_SECRET=$ADMIN_JWT_SECRET
 ADMIN_JWT_EXPIRESIN=240h
 EOF
-
-
-    
-    # 设置环境变量
-    export PORT=12345
-    export ALLOWED_DOMAIN="$SERVER_IP"
-    export ADMIN_PREFIX="$ADMIN_PREFIX"
-    export ADMIN_SECURITY_CODE="Astro321@"
-    export ADMIN_2FA_SECRET="$ADMIN_2FA_SECRET"
-    export ADMIN_JWT_SECRET="$ADMIN_JWT_SECRET"
-    export ADMIN_JWT_EXPIRESIN="240h"
     
     log_info "配置文件已保存到: astro-server/.env"
     
