@@ -1,10 +1,10 @@
-注册交易所欢迎走我的链接（将来一定送VIP会员）
-Binance: https://www.binance.com/activity/referral-entry/CPA?ref=CPA_0043HZONXK
-Bybit: https://www.bybitglobal.com/invite?ref=YP9ANE0
-Bitget: https://partner.niftah.cn/bg/JSSRMT
-OKX: https://www.ouxyi.io/ul/6CngT5?channelId=93279825
-Gate: https://www.gate.com/signup/VGJBVVKJAW?ref_type=103
-Kucoin: https://www.kucoin.com/r/rf/YPXT4P3Q (必须外国身份， 不可以大陆身份证或护照)
+注册交易所欢迎走我的链接（将来一定送VIP会员） \
+Binance: https://www.binance.com/activity/referral-entry/CPA?ref=CPA_0043HZONXK \
+Bybit: https://www.bybitglobal.com/invite?ref=YP9ANE0 \
+Bitget: https://partner.niftah.cn/bg/JSSRMT \
+OKX: https://www.ouxyi.io/ul/6CngT5?channelId=93279825 \
+Gate: https://www.gate.com/signup/VGJBVVKJAW?ref_type=103 \
+Kucoin: https://www.kucoin.com/r/rf/YPXT4P3Q (必须外国身份， 不可以大陆身份证或护照) \
 
 #### [Astro产品介绍](./README.md) 
 #### [Astro安装教程](./INSTALL.md) 
