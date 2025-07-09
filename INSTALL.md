@@ -32,7 +32,7 @@ https://t.me/astro_realtime_news
 系统架构：```x86-64``` \
 内存：```最少2GB``` \
 
-### 2. 执行一键安装脚本 (需输入公网IP地址)
+### 2. 执行一键安装脚本 (需确认公网IP地址)， 安装完成后请使用Chrome浏览器， 不要使用360浏览器
 ```
 curl -L https://raw.githubusercontent.com/astro-btc/Astro/refs/heads/main/install-with-docker.sh | sudo bash -
 ```
