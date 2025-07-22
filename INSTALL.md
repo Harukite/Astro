@@ -83,3 +83,6 @@ curl -L https://raw.githubusercontent.com/astro-btc/Astro/refs/heads/main/instal
 
 #### g. Aster
 官网直接配置即可
+
+#### h. Backpack🎒
+https://backpack.exchange/portfolio/settings/api-keys
