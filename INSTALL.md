@@ -1,14 +1,30 @@
-注册交易所欢迎走我的链接（将来一定送VIP会员） \
-Binance: https://www.binance.com/activity/referral-entry/CPA?ref=CPA_0043HZONXK \
-Bybit: https://www.bybitglobal.com/invite?ref=YP9ANE0 \
-Bitget: https://partner.niftah.cn/bg/JSSRMT \
-OKX: https://www.ouxyi.io/ul/6CngT5?channelId=93279825 \
-Gate: https://www.gate.com/signup/VGJBVVKJAW?ref_type=103 \
-Kucoin: https://www.kucoin.com/r/rf/YPXT4P3Q (必须外国身份， 不可以大陆身份证或护照) \
+💰 支持的交易所 & 返佣比例：\
+  •  Binance（币安）\
+✅ 永久次月返现：现货30%，合约30%\
+🎁 新人福利：注册后合约首月返佣提升到 40%！\
+🔗 注册链接：\
+https://www.binance.com/register?ref=HAOGEGE 
 
-#### [Astro产品介绍](./README.md) 
-#### [Astro安装教程](./INSTALL.md) 
-#### [Astro安全相关-必读](./SECURITY.md) 
+  •  OKX（欧易）\
+✅ 永久次月返现：手续费30%\
+🔗 注册链接：\
+https://okx.com/join/48790398 \
+
+  •  Bitget\
+✅ 永久自动返现：手续费40%（注册后请提供 UID + 邮箱）\
+🔗 注册链接：\
+https://partner.bitget.com/bg/kk999 
+
+--- 正在与商务对接中 --\
+Bybit: https://www.bybitglobal.com/invite?ref=YP9ANE0 \
+Gate: https://www.gate.com/signup/VGJBVVKJAW?ref_type=103 \
+Kucoin: https://www.kucoin.com/r/rf/YPXT4P3Q (必须外国身份， 例如帕劳ID， 不可以大陆身份证或护照) 
+
+
+
+### [Astro产品介绍](./README.md) 
+### [Astro安装教程](./INSTALL.md) 
+### [Astro安全相关-必读](./SECURITY.md) 
 
 套利策略，产品使用群 \
 https://t.me/astro_discuss
