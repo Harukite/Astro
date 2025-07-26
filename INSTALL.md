@@ -114,3 +114,10 @@ curl -L https://raw.githubusercontent.com/astro-btc/Astro/refs/heads/main/instal
 
 #### h. Backpack🎒
 https://backpack.exchange/portfolio/settings/api-keys
+
+#### i.Hyperliquid
+需要三个数据，主钱包地址，代理钱包地址，代理钱包私钥，请参考下面两张图：\
+![image](https://github.com/user-attachments/assets/a8676428-a43d-460c-a183-f544ec0d2196) \
+![image](https://github.com/user-attachments/assets/e52b0c84-29ca-4e66-8af3-5ae76840a4b4)
+
+
