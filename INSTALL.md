@@ -58,7 +58,7 @@ https://t.me/astro_realtime_news
 
 操作系统: ```推荐Ubuntu系统``` \
 系统架构：```x86-64``` \
-内存：```最少2GB``` \
+内存：```最少2GB``` 
 
 ### 2. 执行一键安装脚本 (需确认公网IP地址)， 安装完成后请使用最新版Chrome浏览器打开（其他浏览器会有兼容性问题）
 ```
@@ -70,10 +70,10 @@ curl -L https://raw.githubusercontent.com/astro-btc/Astro/refs/heads/main/instal
 | **配置项**               | **说明**                                                        |
 |--------------------------|-----------------------------------------------------------------|
 | `PORT`                   | 端口号，需要防火墙放行此端口                                      |
-| `ALLOWED_DOMAIN`         | 云服务公网IP地址，也可以填域名（填写域名需替换证书）                                      |
+| `ALLOWED_DOMAIN`         | 云服务公网IP地址，也可以填域名（填写域名需替换证书）                   |
 | `ADMIN_PREFIX`           | 管理后台访问的 URL 前缀 （请自行更改）                             |
-| `ADMIN_SECURITY_CODE`    | 登录密码  （请自行更改）                                                      |
-| `ADMIN_2FA_SECRET`       | 二次认证密钥，请导入 Google Authentication 使用 （请自行更改）    |
+| `ADMIN_SECURITY_CODE`    | 登录密码  （登录后，点击头像可修改密码）                                      |
+| `ADMIN_2FA_SECRET`       | 二次认证密钥，请导入 Google Authentication 使用 （登录后，点击头像可修改密码）    |
 
 
 此配置文件修改过后，请重启系统生效 
