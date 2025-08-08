@@ -5,34 +5,38 @@
 这是什么意思？\
 就是你每一笔交易的手续费，都会有一部分直接返还到你账户，帮你省下不少钱，长期还能多赚不少！
 
-
 💰 支持的交易所 & 返佣比例：\
   •  Binance（币安）\
 ✅ 永久次月返现：现货**%，合约**%\
-🔗 注册链接：\
+🔗 注册链接：
 https://www.binance.com/register?ref=HAOGEGE
+
   •  OKX（欧易）\
 ✅ 永久次月返现：手续费30%\
 🔗 注册链接：\
 https://okx.com/join/48790398
+
   •  Bitget\
-✅ 永久自动返现：手续费40%（注册后请提供 UID + 邮箱）\
+✅ 永久自动返现：手续费40%（注册后请提供 UID + 邮箱给小助理）\
 🔗 注册链接：\
 https://partner.bitget.com/bg/kk999
+
   •  Gate（芝麻开门）\
-✅ 永久自动返现：手续费60%（注册后请提供 UID + 邮箱）\
+✅ 永久自动返现：手续费60%（注册后请提供 UID + 邮箱给小助理）\
 🔗 注册链接：\
 https://www.gateweb.xyz/share/YAYAGEGE
+
   •  Bybit\
 ✅ 永久次月返现：手续费45%\
 🔗 注册链接：\
 https://partner.bybit.com/b/GEGE
+
   •  BackPack（红背包）\
 ✅ 全额自动返现：手续费10%\
 https://backpack.exchange/join/ea253c99-dfd1-4fa3-ac28-ff6e1eafaf0b
 
-  •  Kucoin(必须外国身份， 例如帕劳ID， 不可以大陆身份证或护照)\
-https://www.kucoin.com/r/rf/YPXT4P3Q 
+  •  Kucoin (必须外国身份， 例如帕劳ID， 不可以大陆身份证或护照)\
+https://www.kucoin.com/r/rf/YPXT4P3Q
 
 
 \
