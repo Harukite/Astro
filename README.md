@@ -35,6 +35,10 @@ https://partner.bybit.com/b/GEGE
 ✅ 全额自动返现：手续费10%\
 https://backpack.exchange/join/ea253c99-dfd1-4fa3-ac28-ff6e1eafaf0b
 
+•  Hyperliquid \
+✅ 永久手续费减免4% \
+https://app.hyperliquid.xyz/join/ASTROHL
+
   •  Kucoin (必须外国身份， 例如帕劳ID， 不可以大陆身份证或护照)\
 https://www.kucoin.com/r/rf/YPXT4P3Q
 
