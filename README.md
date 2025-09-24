@@ -85,7 +85,7 @@ Astro 是一款基于多空对冲策略的**中心化交易所（CEX）套利工
 | Kucoin   | ✅   | ✅           |
 | Gate     | ✅   | ✅           |
 | OKX      | ✅   | ✅           |
-| Aster    | ❌   | ✅           |
+| Aster    | ✅   | ✅           |
 | Backpack | ✅   | ✅           |
 | Hyperliquid | ✅   | ✅           |
 
