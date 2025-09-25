@@ -32,43 +32,47 @@ validate_channel_id() {
     return 0
 }
 
-# 从调用命令中解析channel参数（例如 curl .../install.sh?channel=123456 | sudo bash -）
-detect_channel_from_curl() {
-    # 优先使用已存在的环境变量 CHANNEL_ID（若有效）
-    if validate_channel_id "$CHANNEL_ID"; then
-        echo "$CHANNEL_ID"
-        return 0
-    fi
-
-    # 尝试从正在运行的 curl 命令行参数中提取 URL
-    # 使用 ps + awk 避免 grep 返回码影响 set -e
-    local curl_line
-    curl_line=$(ps -eo args -ww | awk '/curl/ && /install\.sh/ {print; exit}')
-
-    if [ -z "$curl_line" ]; then
-        echo ""
-        return 0
-    fi
-
-    # 提取第一个 URL 参数
-    local url
-    url=$(echo "$curl_line" | awk '{for (i=1;i<=NF;i++) if ($i ~ /^https?:\/\//) {print $i; exit}}')
-
-    if [ -z "$url" ]; then
-        echo ""
-        return 0
-    fi
-
-    # 从 URL 查询参数中提取 channel 值
-    # 仅接受纯数字，且长度 < 24
-    local candidate
-    candidate=$(echo "$url" | awk -F'[?&]' '{for(i=2;i<=NF;i++){ if($i ~ /^channel=/){split($i,a,"="); print a[2]; exit}}}')
-
-    if echo "$candidate" | grep -Eq '^[0-9]{1,23}$'; then
-        echo "$candidate"
-    else
-        echo ""
-    fi
+# 从脚本参数中解析 channel（支持 --channel 123、--channel=123、-c 123、channel=123）
+parse_channel_from_args() {
+    local ch=""
+    while [ $# -gt 0 ]; do
+        case "$1" in
+            --channel)
+                if [ $# -ge 2 ]; then
+                    ch="$2"
+                    shift 2
+                    continue
+                else
+                    shift
+                    continue
+                fi
+                ;;
+            --channel=*)
+                ch="${1#--channel=}"
+                shift
+                continue
+                ;;
+            -c)
+                if [ $# -ge 2 ]; then
+                    ch="$2"
+                    shift 2
+                    continue
+                else
+                    shift
+                    continue
+                fi
+                ;;
+            channel=*)
+                ch="${1#channel=}"
+                shift
+                continue
+                ;;
+            *)
+                shift
+                ;;
+        esac
+    done
+    echo "$ch"
 }
 
 log_warn() {
@@ -430,10 +434,15 @@ main() {
     echo "----> [ASTRO-INSTALL] Starting Astro installation..." > /dev/tty
     get_server_ip
     
-    # 解析 channel 参数（来自 curl 的 URL 查询参数或已设置的环境变量）
-    CHANNEL_ID="$(detect_channel_from_curl || true)"
-    if [ -n "$CHANNEL_ID" ]; then
+    # 解析 channel 参数（优先脚本参数，其次环境变量）
+    CHANNEL_ID=""
+    _arg_channel="$(parse_channel_from_args "$@" || true)"
+    if validate_channel_id "$_arg_channel"; then
+        CHANNEL_ID="$_arg_channel"
         log_info "检测到 channel 参数: $CHANNEL_ID"
+    elif validate_channel_id "$CHANNEL_ID"; then
+        # 已存在且有效的环境变量 CHANNEL_ID
+        log_info "检测到环境变量 CHANNEL_ID: $CHANNEL_ID"
     else
         log_info "未检测到有效的 channel 参数，将使用空字符串"
         CHANNEL_ID=""
