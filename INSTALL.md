@@ -85,4 +85,10 @@ https://backpack.exchange/portfolio/settings/api-keys
 ![image](https://github.com/user-attachments/assets/a8676428-a43d-460c-a183-f544ec0d2196) \
 ![image](https://github.com/user-attachments/assets/e52b0c84-29ca-4e66-8af3-5ae76840a4b4)
 
+#### j. Htx
+==> 请设置资产模式为联合保证金模式（资产模式->联合保证金模式）
+==> 请设置为双向持仓 （持仓模式->双向持仓）
+权限相关参考下图：\
+![](images/htx1.png) \
+![](images/htx2.png)
 
