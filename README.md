@@ -35,7 +35,7 @@ Astro 是一款基于多空对冲策略的**中心化交易所（CEX）套利工
 | Aster    | ✅   | ✅           |
 | Backpack | ✅   | ✅           |
 | Hyperliquid | ✅   | ✅           |
-
+| HTX      | ✅   | ✅           |
 ---
 
 ## 套利原理
