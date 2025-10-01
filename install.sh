@@ -464,7 +464,7 @@ main() {
     # 创建.env文件
     log_info "生成配置文件..."
     cat > astro-server/.env << EOF
-PORT=12345
+PORT=8443
 ALLOWED_DOMAIN=$SERVER_IP
 ADMIN_PREFIX=$ADMIN_PREFIX
 ADMIN_SECURITY_CODE=Astro321@
@@ -475,7 +475,7 @@ CHANNEL_ID=$CHANNEL_ID
 EOF
     
     # 设置环境变量
-    export PORT=12345
+    export PORT=8443
     export ALLOWED_DOMAIN="$SERVER_IP"
     export ADMIN_PREFIX="$ADMIN_PREFIX"
     export ADMIN_SECURITY_CODE="Astro321@"
@@ -504,7 +504,7 @@ EOF
         --health-interval=30s \
         --health-timeout=10s \
         --health-retries=3 \
-        -p 12345:12345 \
+        -p 8443:8443 \
         -v "$(pwd)/astro-server/.env:/home/ubuntu/astro-server/.env" \
         mydocker788/astro:latest \
         bash -c "
