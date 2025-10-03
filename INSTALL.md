@@ -71,6 +71,7 @@ curl -L https://raw.githubusercontent.com/astro-btc/Astro/refs/heads/main/instal
 ![](images/Gate-API.png)
 
 #### f. Kucoin
+==> 请开启双向持仓 \
 权限相关参考下图：\
 ![](images/kucoin-API.png)
 
