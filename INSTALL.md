@@ -93,3 +93,8 @@ https://backpack.exchange/portfolio/settings/api-keys
 ![](images/htx1.png) \
 ![](images/htx2.png)
 
+#### k. Lighter
+API KEY 相关参考下图：\
+![](images/lighter1.png) \
+![](images/lighter2.png)
+
