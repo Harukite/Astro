@@ -76,7 +76,7 @@ curl -L https://raw.githubusercontent.com/astro-btc/Astro/refs/heads/main/instal
 ![](images/kucoin-API.png)
 
 #### g. Aster
-官网直接配置即可
+联合保证金模式 + 双向持仓
 
 #### h. Backpack🎒
 https://backpack.exchange/portfolio/settings/api-keys
