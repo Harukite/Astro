@@ -58,6 +58,7 @@ curl -L https://raw.githubusercontent.com/astro-btc/Astro/refs/heads/main/instal
 ![](images/Bybit-API.png)
 
 #### c. Bitget
+支持统一账户 & 经典账户 \
 请使用联合保证金模式，权限相关参考下图：\
 ![](images/BG-API.png)
 
