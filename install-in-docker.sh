@@ -91,26 +91,9 @@ echo "----> [ASTRO-INSTALL] Setting up astro-core..."
 cd astro-core || exit 1
 
 # Install dependencies excluding better-sqlite3
-echo "----> [ASTRO-INSTALL] Installing astro-core dependencies (excluding better-sqlite3)..."
-yarn install --ignore-scripts
+echo "----> [ASTRO-INSTALL] Installing astro-core dependencies..."
+yarn install
 
-# Download and install precompiled better-sqlite3
-echo "----> [ASTRO-INSTALL] Downloading precompiled better-sqlite3..."
-cd node_modules || exit 1
-
-# Download the precompiled package
-wget -O bs3-ubuntu-x64.gz "https://raw.githubusercontent.com/astro-btc/astro/refs/heads/main/bs3-ubuntu-x64.gz"
-
-# Extract to better-sqlite3 directory
-echo "----> [ASTRO-INSTALL] Extracting better-sqlite3..."
-mkdir -p better-sqlite3
-tar -xzf bs3-ubuntu-x64.gz
-
-# Clean up downloaded file
-rm bs3-ubuntu-x64.gz
-
-# Return to astro-core directory
-cd ..
 pm2 start pm2.config.js
 echo "----> [ASTRO-INSTALL] astro-core setup completed"
 
