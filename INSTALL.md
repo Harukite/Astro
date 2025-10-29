@@ -64,7 +64,8 @@ curl -L https://raw.githubusercontent.com/astro-btc/Astro/refs/heads/main/instal
 ![](images/BG-API.png)
 
 #### d. OKX
-请使用跨币种保证金模式，权限相关参考下图：\
+请使用 「合约模式】 或 「跨币种保证金模式」
+权限相关参考下图：\
 ![](images/OKX-API.png)
 
 #### e. Gate
