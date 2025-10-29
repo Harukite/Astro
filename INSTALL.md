@@ -60,11 +60,11 @@ curl -L https://raw.githubusercontent.com/astro-btc/Astro/refs/heads/main/instal
 
 #### c. Bitget
 支持统一账户 & 经典账户 \
-请使用联合保证金模式，权限相关参考下图：\
+请使用联合保证金模式， 并开启双向持仓，权限相关参考下图：\
 ![](images/BG-API.png)
 
 #### d. OKX
-请使用 「合约模式】 或 「跨币种保证金模式」
+请使用 「合约模式】 或 「跨币种保证金模式」，并开启双向持仓
 权限相关参考下图：\
 ![](images/OKX-API.png)
 
