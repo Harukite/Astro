@@ -19,7 +19,7 @@ https://t.me/astro_realtime_news
 #### 服务器安全
 1. 一定不要暴漏你服务器IP地址
 2. 禁止SSH密码登录，仅支持publicKey登录
-3. 开启防火墙，仅放开22端口(SSH服务) 和 Astro服务器端口(默认12345)
+3. 开启防火墙，仅放开22端口(SSH服务) 和 Astro服务器端口(默认8443)
 
 #### 交易所API KEY安全
 1. 一定要绑定IP地址
