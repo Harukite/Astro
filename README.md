@@ -3,7 +3,7 @@
 ### [Astro常见问题](./Docs/常见问题.md) 
 ### [Astro安全相关-必读](./SECURITY.md) 
 
-套利策略，产品使用群 \
+产品使用交流群 \
 https://t.me/astro_discuss
 
 行情工具 \
