@@ -98,7 +98,7 @@ https://backpack.exchange/portfolio/settings/api-keys
 
 #### k. Lighter
 1. 切勿勾选「仅减仓」选项， 否则无法开单
-2. 有些交易对无法用Cross模式，请手动调整为Isolated模式
+2. 有些交易对无法用Cross模式，请手动调整为Isolated模式 \
 API KEY 相关参考下图：\
 ![](images/lighter1.png) \
 ![](images/lighter2.png)
