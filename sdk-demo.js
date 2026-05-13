@@ -53,12 +53,13 @@ const simpleSignRawBody = (key, nonce, ts, path, rawBody, method = 'POST') => {
 // API Key - 需要先在账户->开发者代码通过「set api-key ***」设置API KEY, 随机数长度12-32，数字和大小写字母
 // ⚠️ 如果api key被黑客盗取，黑客就可以开单了，切记谨慎保管，定期更换，长度尽量长
 const API_KEY = process.env.ASTRO_API_KEY || '***'; // 请替换为实际的 API Key
+const API_PREFIX = 'xxx'; // 指astro管理页面的url后缀，也就是astro-server/.env 文件中的ADMIN_PREFIX字段
 
 // 服务器地址
 const BASE_URL = '127.0.0.1'; // 请替换为实际的服务器地址
 const PORT = 8443;
-const PAIR_API_PATH = '/api/config/sdk-update-pair';
-const MESSAGE_API_PATH = '/api/config/sdk-send-message';
+const PAIR_API_PATH = `/${API_PREFIX}/api/config/sdk-update-pair`;
+const MESSAGE_API_PATH = `/${API_PREFIX}/api/config/sdk-send-message`;
 
 // 默认使用 HTTPS
 const USE_HTTPS = true;
