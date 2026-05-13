@@ -12,12 +12,14 @@
 ## 1. 接口概览
 
 - 请求方式：`POST`
-- Pair 管理接口：`/api/config/sdk-update-pair`
-- Message 发送接口：`/api/config/sdk-send-message`
-- Pair 接口示例完整地址：`https://127.0.0.1:12345/api/config/sdk-update-pair`
-- Message 接口示例完整地址：`https://127.0.0.1:12345/api/config/sdk-send-message`
+- Pair 管理接口：`/xxx/api/config/sdk-update-pair`
+- Message 发送接口：`/xxx/api/config/sdk-send-message`
+- Pair 接口示例完整地址：`https://127.0.0.1:12345/xxx/api/config/sdk-update-pair`
+- Message 接口示例完整地址：`https://127.0.0.1:12345/xxx/api/config/sdk-send-message`
 - Pair 接口支持动作：`list`、`add`、`update`、`delete`
 - Message 接口支持类型：`warning`、`notice`
+
+其中 xxx 是指astro主页面的后缀，也就是astro-server/.env 文件中的ADMIN_PREFIX字段
 
 说明：
 
