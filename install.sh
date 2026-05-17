@@ -17,64 +17,6 @@ log_info() {
     echo -e "${GREEN}[ASTRO-INSTALL]${NC} $1"
 }
 
-# 验证channel参数（纯数字且长度<24字节）
-validate_channel_id() {
-    local ch="$1"
-    if [ -z "$ch" ]; then
-        return 1
-    fi
-    if ! [[ "$ch" =~ ^[0-9]+$ ]]; then
-        return 1
-    fi
-    if [ ${#ch} -ge 24 ]; then
-        return 1
-    fi
-    return 0
-}
-
-# 从脚本参数中解析 channel（支持 --channel 123、--channel=123、-c 123、channel=123）
-parse_channel_from_args() {
-    local ch=""
-    while [ $# -gt 0 ]; do
-        case "$1" in
-            --channel)
-                if [ $# -ge 2 ]; then
-                    ch="$2"
-                    shift 2
-                    continue
-                else
-                    shift
-                    continue
-                fi
-                ;;
-            --channel=*)
-                ch="${1#--channel=}"
-                shift
-                continue
-                ;;
-            -c)
-                if [ $# -ge 2 ]; then
-                    ch="$2"
-                    shift 2
-                    continue
-                else
-                    shift
-                    continue
-                fi
-                ;;
-            channel=*)
-                ch="${1#channel=}"
-                shift
-                continue
-                ;;
-            *)
-                shift
-                ;;
-        esac
-    done
-    echo "$ch"
-}
-
 log_warn() {
     echo -e "${YELLOW}[ASTRO-INSTALL]${NC} $1"
 }
@@ -378,8 +320,6 @@ verify_restart_configuration() {
         log_warn "配置文件未找到"
     fi
     
-
-    
     # 验证卷映射
     if docker inspect astro-app --format='{{range .Mounts}}{{.Source}}:{{.Destination}}{{end}}' 2>/dev/null | grep -q "astro-server/.env"; then
         log_info "配置文件映射已配置 ✓"
@@ -424,20 +364,6 @@ main() {
     echo "----> [ASTRO-INSTALL] Starting Astro installation..." > /dev/tty
     get_server_ip
     
-    # 解析 channel 参数（优先脚本参数，其次环境变量）
-    CHANNEL_ID=""
-    _arg_channel="$(parse_channel_from_args "$@" || true)"
-    if validate_channel_id "$_arg_channel"; then
-        CHANNEL_ID="$_arg_channel"
-        log_info "检测到 channel 参数: $CHANNEL_ID"
-    elif validate_channel_id "$CHANNEL_ID"; then
-        # 已存在且有效的环境变量 CHANNEL_ID
-        log_info "检测到环境变量 CHANNEL_ID: $CHANNEL_ID"
-    else
-        log_info "未检测到有效的 channel 参数，将使用空字符串"
-        CHANNEL_ID=""
-    fi
-    
     # 生成随机配置
     log_info "生成安全配置..."
     
@@ -462,7 +388,6 @@ ADMIN_SECURITY_CODE=$ADMIN_SECURITY_CODE
 ADMIN_2FA_SECRET=$ADMIN_2FA_SECRET
 ADMIN_JWT_SECRET=$ADMIN_JWT_SECRET
 ADMIN_JWT_EXPIRESIN=240h
-CHANNEL_ID=$CHANNEL_ID
 EOF
     
     # 设置环境变量
@@ -473,7 +398,6 @@ EOF
     export ADMIN_2FA_SECRET="$ADMIN_2FA_SECRET"
     export ADMIN_JWT_SECRET="$ADMIN_JWT_SECRET"
     export ADMIN_JWT_EXPIRESIN="240h"
-    export CHANNEL_ID="$CHANNEL_ID"
     
     log_info "配置文件已保存到: astro-server/.env"
     
